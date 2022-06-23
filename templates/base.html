@@ -16,109 +16,117 @@
 
 </head>
 <body>
-<meta charset="UTF-8">
-<title> Приложение для дел</title>
-{% load static %}
-<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'bulma.min.css' %}">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<style>
-    body {
-        background: #aaaaaa url(../blog/static/blog/static_blog.jpg); /* Фоновый цвет и фоновый рисунок*/
-        color: #1b1b1b; /*Цвет текста на странице*/
-        background-attachment: fixed; /* Фон страницы фиксируется */
-        background-repeat: repeat-x; /* Изображение повторяется по горизонтали */
-    }
-</style>
-<!--<body style="background-image: url({% static '../blog/static/blog/static_blog.jpg' %})">-->
-<!-- <body bgcolor="#aaa" background="nubex.png">-->
-<!--	<p>Здесь фоновое изображение устанавливается с помощью атрибута background тега body.</p>-->
+<center>
+    <meta charset="UTF-8">
+    <title> Приложение для дел</title>
+    {% load static %}
+    <!--<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>-->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'bulma.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--</head>-->
+    <style>
+        body {
+            background: #f5dd5d url(../blog/static/blog/static_blog.jpg); /* Фоновый цвет и фоновый рисунок*/
+            /*body style="background-image: url({% static '../blog/static/blog/static_background' %})*/
+            color: #264b5d; /*Цвет текста на странице*/
+            background-attachment: fixed; /* Фон страницы фиксируется */
+            background-repeat: repeat-x; /* Изображение повторяется по горизонтали */
+        }
+    </style>
+    <!--<body style="background-image: url({% static '../blog/static/blog/static_blog.jpg' %})">-->
+    <!-- <body bgcolor="#aaa" background="nubex.png">-->
+    <!--	<p>Здесь фоновое изображение устанавливается с помощью атрибута background тега body.</p>-->
 
-<!--спиннеры-->
+    <!--спиннеры-->
 
-<div class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-secondary" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-success" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-danger" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-warning" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-info" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-light" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-dark" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
-
-<!--  навбар-->
-<div class="sticky-top">
-    <div django-app="TaskManager">
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../category">Категории</a>
-                        <!--                    <a href="../category" > Категории</a>-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../todo">Список дел</a>
-                        <!--                    <a href="../todo" class="link-primary"> Список дел</a>-->
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Поиск дел" aria-label="Поиск">
-                    <button class="btn btn-outline-success" type="submit">Поиск</button>
-                </form>
-            </div>
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
     </div>
-</div>
-</nav>
-<!--	<nav class="nav nav-pills nav-fill">-->
-<!--		<a class="nav-link" href="../category">Категории</a>-->
-<!--  		<a class="nav-link" href="../todo">Список дел</a>-->
-<!--	</nav>-->
+    <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-warning" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-info" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
 
-<!--	<nav class ="navbar is-success" role="navigation" aria-label="main navigation">-->
-<!--     	<div class="navbar-menu ">-->
-<!--        	<div class="navbar-start">-->
-<!--        	<a class="navbar-item" href="../category"> Категории</a>-->
-<!--        	<a class="navbar-item" href="../todo">Список дел</a-->
-<!--        	</div>-->
-<!--         </div>-->
+    <!--  навбар-->
 
-{% block content %}
-{% endblock %}
+    <div class="sticky-top">
+        <div django-app="TaskManager">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../category">Категории</a>
+                            <!--                    <a href="../category" > Категории</a>-->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../todo">Список дел</a>
+                            <!--                    <a href="../todo" class="link-primary"> Список дел</a>-->
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Поиск дел" aria-label="Поиск">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--	<nav class="nav nav-pills nav-fill">-->
+    <!--		<a class="nav-link" href="../category">Категории</a>-->
+    <!--  		<a class="nav-link" href="../todo">Список дел</a>-->
+    <!--	</nav>-->
 
-<!--футтер-->
-<div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href="../category"> Категории</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../todo">Список дел</a>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">1.0.1 версия программы "Мой список дел"</h5>
-    <p class="card-text">При поддерже IT OVERONE</p>
-    <a href="#" class="btn btn-primary">Вверх страницы</a>
-  </div>
-</div>
-</div>
+    <!--	<nav class ="navbar is-success" role="navigation" aria-label="main navigation">-->
+    <!--     	<div class="navbar-menu ">-->
+    <!--        	<div class="navbar-start">-->
+    <!--        	<a class="navbar-item" href="../category"> Категории</a>-->
+    <!--        	<a class="navbar-item" href="../todo">Список дел</a-->
+    <!--        	</div>-->
+    <!--         </div>-->
+
+    {% block content %}
+    {% endblock %}
+
+    <!--футтер-->
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="true" href="../category"> Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../todo">Список дел</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">1.0.1 версия программы "Мой список дел"</h5>
+            <p class="card-text">При поддерже IT OVERONE</p>
+            <p class="card-text">куратор проекта: Николай Стром</p>
+            <p class="card-text"> разработчик: Михолап Максим </p>
+            <p class="card-text">к/т +375293835688</p>
+            <a href="#" class="btn btn-primary">Вверх страницы</a>
+        </div>
+    </div>
+    </div>
+</center>
 </body>
 </html>
