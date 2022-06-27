@@ -8,7 +8,7 @@ from .models import TodoList, Category  # не забываем наши мод�
 
 
 def redirect_view(request):
-    return redirect("/category")  # редирект с главной на категории
+    return redirect("/category/")  # редирект с главной на категории
 
 
 def todo(request):
@@ -23,7 +23,7 @@ def todo(request):
             content = title + " -- " + date + " " + category  # полный склеенный контент
             Todo = TodoList(title=title, content=content, due_date=date, category=Category.objects.get(name=category))
             Todo.save()  # сохранение нашего дела
-            return redirect("/todo")  # перегрузка страницы (ну вот так у нас будет устроено очищение формы)
+            return redirect("/todo/")  # перегрузка страницы (ну вот так у нас будет устроено очищение формы)
         if "Delete" in request.POST:  # если пользователь собирается удалить одно дело
             checkedlist = request.POST.getlist(
                 'checkedbox')  # берем список выделенные дел, которые мы собираемся удалить
@@ -40,7 +40,7 @@ def category(request):
             name = request.POST["name"]  # имя нашей категории
             category = Category(name=name)  # у нашей категории есть только имя
             category.save()  # сохранение нашей категории
-            return redirect("/category")
+            return redirect("/category/")
         if "Delete" in request.POST:  # проверяем есть ли удаление
             check = request.POST.getlist(
                 'check')  # немного изменил название массива в отличии от todo, что бы было меньше путаницы в коде
