@@ -1,6 +1,6 @@
 from django.db import models
 
-from django.utils import timezone  # мы будем получать дату создания todo
+from django.utils import timezone  # мы будем получать дату создания toodo
 from django.db import models
 
 

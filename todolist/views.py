@@ -51,3 +51,6 @@ def category(request):
                 except BaseException:  # вне сомнения тут нужно нормально переписать обработку ошибок, но на первое время хватит и этого
                     return HttpResponse('<h1>Сначала удалите карточки с этими категориями)</h1>')
     return render(request, "category.html", {"categories": categories})
+
+# def google(request):
+#     return redirect("https://www.google.com/search?gs_ssp=eJzj4tTP1TcwMU02T1JgNGB0YPBiS8_PT89JBQBASQXT&q=google&oq=goo&aqs=chrome.1.0i131i355i433i512j46i131i199i433i465i512j0i131i433i512l2j69i57j0i131i433i512j69i60l2.2144j0j7&sourceid=chrome&ie=UTF-8")  #ссылка на поиск
